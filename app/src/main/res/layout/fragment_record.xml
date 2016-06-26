@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/chronometer"
         android:textSize="60sp"
+        android:textColor="@color/primary_text"
         android:fontFamily="sans-serif-light"
         android:layout_alignBottom="@+id/recordProgressBar"
         android:layout_centerHorizontal="true"
