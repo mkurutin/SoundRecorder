@@ -24,7 +24,6 @@ import com.danielkim.soundrecorder.fragments.PlaybackFragment;
 import com.danielkim.soundrecorder.listeners.OnDatabaseChangedListener;
 
 import java.io.File;
-import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;
 
@@ -158,11 +157,11 @@ public class FileViewerAdapter extends RecyclerView.Adapter<FileViewerAdapter.Re
 
     @Override
     public int getItemCount() {
-        return mDatabase.getCount();
+        return mDatabase.getRecordingsCount();
     }
 
     public RecordingItem getItem(int position) {
-        return mDatabase.getItemAt(position);
+        return mDatabase.getRecordingItemAt(position);
     }
 
     @Override
@@ -194,7 +193,7 @@ public class FileViewerAdapter extends RecyclerView.Adapter<FileViewerAdapter.Re
             Toast.LENGTH_SHORT
         ).show();
 
-        mDatabase.removeItemWithId(getItem(position).getId());
+        mDatabase.removeRecordingItemWithId(getItem(position).getId());
         notifyItemRemoved(position);
     }
 
@@ -220,7 +219,7 @@ public class FileViewerAdapter extends RecyclerView.Adapter<FileViewerAdapter.Re
             //file name is unique, rename file
             File oldFilePath = new File(getItem(position).getFilePath());
             oldFilePath.renameTo(f);
-            mDatabase.renameItem(getItem(position), name);
+            mDatabase.renameRecordingItem(getItem(position), name);
             notifyItemChanged(position);
         }
     }

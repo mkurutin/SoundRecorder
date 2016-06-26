@@ -5,7 +5,7 @@
     <string name="app_name">Sound Recorder</string>
     <string name="action_licenses">Licencias</string>
     <string name="action_settings">Ajustes</string>
-    <string name="tab_title_record">Grabar</string>
+    <string name="tab_title_play">Grabar</string>
     <string name="tab_title_saved_recordings">Guardar grabaciones</string>
 
     <!-- Toasts -->

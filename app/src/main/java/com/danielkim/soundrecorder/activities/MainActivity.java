@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.danielkim.soundrecorder.R;
+import com.danielkim.soundrecorder.fragments.AudiobookPickerFragment;
 import com.danielkim.soundrecorder.fragments.FileViewerFragment;
 import com.danielkim.soundrecorder.fragments.LicensesFragment;
 import com.danielkim.soundrecorder.fragments.RecordFragment;
@@ -69,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public class MyAdapter extends FragmentPagerAdapter {
-        private String[] titles = { getString(R.string.tab_title_record),
-                getString(R.string.tab_title_saved_recordings) };
+        private String[] titles = { getString(R.string.tab_title_play),
+                getString(R.string.choose_audiobook), getString(R.string.tab_title_saved_recordings) };
 
         public MyAdapter(FragmentManager fm) {
             super(fm);
@@ -83,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                     return RecordFragment.newInstance(position);
                 }
                 case 1:{
+                    return AudiobookPickerFragment.newInstance(position);
+                }
+                case 2:{
                     return FileViewerFragment.newInstance(position);
                 }
             }

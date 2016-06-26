@@ -34,7 +34,7 @@ public class RecordFragment extends Fragment {
 
     private int position;
 
-    //Recording controls
+    //SavedRecordings controls
     private FloatingActionButton mRecordButton = null;
     private Button mPauseButton = null;
 
@@ -104,7 +104,7 @@ public class RecordFragment extends Fragment {
         return recordView;
     }
 
-    // Recording Start/Stop
+    // SavedRecordings Start/Stop
     //TODO: recording pause
     private void onRecord(boolean start){
 
